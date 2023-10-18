@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <table class="chess-board">
+      <tbody>
+        {% for x in range(0,x): %}
+        <tr>
+          {% for y in range(0,y): %} 
+            {% if x % 2 == 0 and y % 2 == 0%}
+          <td class="dark" style="background: {{a}}"></td>
+          {% elif x % 2 == 0 and y % 2 == 1%}
+          <td class="light" style="background: {{b}}"></td>
+          {% elif x % 2 == 1 and y % 2 == 0%}
+          <td class="light" style="background: {{b}}"></td>
+          {% else %} 
+          <td class="dark" style="background: {{a}}"></td>
+          {% endif %} 
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <!-- <img src="{{ url_for('static', filename='my_img.png') }}"> -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+  </body>
+</html>
